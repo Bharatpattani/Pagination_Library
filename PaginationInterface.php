@@ -66,7 +66,6 @@ interface PaginationInterface
 	function getPage($page_no);
 		
 	/*
-	 * @param int $page_no 
 	 * 
 	 *function return true if specific page is available else return false
 	 */
