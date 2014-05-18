@@ -40,6 +40,7 @@ $pagination_obj->setPages($data_student);
 
 while($pagination_obj->hasNextPage())
 {
+
 	echo "<br/>-----------------------------------------------------------------------</br>";
 
 	echo "Page No:".$pagination_obj->tell();
