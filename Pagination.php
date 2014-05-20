@@ -63,7 +63,7 @@ class Pagination implements PaginationInterface
 	 */
 	public function getMaxPage()
 	{
-		return intval(($this->adapter->count()/($this->maxPerPage)+1));
+		return intval(($this->adapter->count()/($this->maxPerPage)));
 	}
 	
 	/*
@@ -73,7 +73,7 @@ class Pagination implements PaginationInterface
 	{
 		if($this->hasPage($page_no))
 		{
-			return (($page_no-1)*$this->maxPerPage);
+			return (($page_no)*$this->maxPerPage);
 		}
 		else 
 		{
@@ -87,7 +87,7 @@ class Pagination implements PaginationInterface
 	public function getPageFromOffset($offset)
 	{
 		$page_no=$offset/$this->maxPerPage;
-		$page_no=$page_no+1;
+		$page_no=$page_no;
 		if($this->hasPage($page_no))
 		{
 			return intval($page_no);
@@ -180,7 +180,7 @@ class Pagination implements PaginationInterface
 	* @inheritDoc
 	*/
 	public function getPage($page_no)
-	{
+	{$page_no--;
 		if($this->hasPage($page_no))
 		{
 			$offset=$this->getOffsetFromPage($page_no);
@@ -216,8 +216,5 @@ class Pagination implements PaginationInterface
 	{
 		return $this->getPageFromOffset($this->offset);
 	}
-	
-	
-	
 } 
 ?>
