@@ -43,9 +43,9 @@ while($pagination_obj->hasNextPage())
 
 	echo "<br/>-----------------------------------------------------------------------</br>";
 
-	echo "Page No:".$pagination_obj->tell();
 	$tmp_students=$pagination_obj->getNextPage();
-		echo "<br/>";
+	echo "Page No:".$pagination_obj->tell();
+	echo "<br/>";
 
 	foreach($tmp_students as $tmp_student)
 	{
